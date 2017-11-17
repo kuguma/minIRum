@@ -76,3 +76,37 @@ Access-Control-Allow-Origin: *
 * [Arduino core for ESP8266 WiFi chip](https://github.com/esp8266/Arduino)
 * [aJson](https://github.com/interactive-matter/aJson)
 * [IRremoteESP8266](https://github.com/markszabo/IRremoteESP8266)
+
+## Appendix
+
+### 動作確認環境
+
+- Arduino 1.8.5
+- IRremoteESP8266 2.3.0
+- aJson 1.0
+
+### Install
+
+- Arduinoは公式から取得するのでOK
+- ESP8266用のArduino coreはArduinoへのインストールが必要 [https://qiita.com/azusa9/items/264165005aefaa3e8d7d]
+- IRremoteESP8266, aJsonのライブラリはgithubからzipを落としてきて スケッチ > ライブラリをインクルード > .ZIP形式のライブラリをインストール
+
+### ボードへの書き込み等
+
+まずは正しく接続できているかを調べる：
+
+[http://deviceplus.jp/hobby/entry0033/]
+
+- FTDIのVCOMドライバを公式からインストールする
+- シリアルモニタに接続、ボーレート等を調整する
+- USBで接続する
+- ESPにリセットをかけて（リセットピンをGNDに接地させてもどすとリセットがかかる）、シリアルモニタに文字化け＆readyが表示されればOK
+
+つぎに書き込む：
+
+- ESPを書き込みモードにする（IO0を接地させると書き込みモードになる）
+- Arduinoで書き込む
+- リセットを書ける
+
+
+
